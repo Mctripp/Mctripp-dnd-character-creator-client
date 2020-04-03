@@ -1,1 +1,60 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
+
+// Theme colors
+$colorLightGreen: #d4f7d4;
+$colorGreen: #559e54;
+$colorDarkGreen: #357e34;
+$colorPurple: #9a0794;
+$colorOrange: #f1a713;
+$colorDarkPurple: #1f1f1f;
+
+html, body {
+  color: $colorGreen;
+  height: 100%;
+  background: $colorLightGreen;
+}
+
+header {
+  color: $colorDarkPurple;
+  background: $colorGreen;
+}
+
+header h2 {
+  font-family: 'Cinzel Decorative', cursive;
+  font-weight: 700;
+}
+
+header h3 {
+  font-family: 'Cinzel Decorative', cursive;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+footer {
+  background: $colorDarkPurple;
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+input, button {
+  font-size: 12px;
+  border-width: 1px;
+}
+
+form {
+  padding: 1px 3px 3px 3px;
+}
+
+header button, input {
+  border-radius: 5px;
+}
+
+header form {
+  background: $colorDarkGreen;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 2px;
+}

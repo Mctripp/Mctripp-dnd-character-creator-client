@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>DND 5e Character Creator</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,43 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <header>
+        <h2>Character Generator</h2>
+        <h3>for Dungeons & Dragons 5e</h3>
+        <form id="form-sign-in" class="signed-out">
+          <input type="email" name="credentials[email]" placeholder="Email" autocomplete="email">
+          <input type="password" name="credentials[password]" placeholder="Password" autocomplete="current-password">
+          <button>Sign in</button>
+        </form>
+        <form id="form-sign-up" class="signed-out">
+          <input type="email" name="credentials[email]" placeholder="Email">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm password">
+          <button>Sign up</button>
+        </form>
+        <form id="form-change-password" class="signed-in">
+          <input type="password" name="passwords[old]" placeholder="Password">
+          <input type="password" name="passwords[new]" placeholder="Confirm password">
+          <button>Change password</button>
+        </form>
+        <form id="form-sign-out" class="signed-in">
+          <button>Sign out</button>
+        </form>
+      </header>
+      <main>
+        <form id="form-char-create" class="signed-in">
+          <input type="text" name="character[name]" placeholder="Character name">
+          <input type="text" name="character[exp]" placeholder="Experience points">
+          <input type="text" name="character[alignment]" placeholder="Alignment">
+          <input type="text" name="character[appearance]" placeholder="Appearance">
+          <input type="text" name="character[personality]" placeholder="Personality description">
+          <input type="text" name="character[backstory]" placeholder="Backstory">
+          <button>Create character</button>
+        </form>
+        <p id="msgs">Msgs here</p>
+      </main>
+      <footer>
+        miketripp | about | github | linkedin
+      </footer>
     </body>
 </html>
