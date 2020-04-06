@@ -39,15 +39,25 @@ $('.content').append(showCharactersHtml)
 
 const onGetCharacterSuccess = responseData => {
   const responseCharacter = responseData.character
+  const responseCharacterAlign = responseCharacter.alignment
   const displayCharacterHtml = displayCharacterTemplate({ character: responseCharacter })
   $('.content').empty()
   $('.content').append(displayCharacterHtml)
+  $('.div-char').find('select').children().each( (index, element) => {
+    if (element.value === responseCharacterAlign){
+      element.selected = true
+    }
+  })
 }
 
 const onCreateCharacterSuccess = responseData => {
 displaySuccessMsg("Character created successfully")
 clearAllForms()
 } // onSignInSuccess
+
+const onSaveCharacterSuccess = responseData => {
+
+}
 
 // FAILURES -------------------------
 

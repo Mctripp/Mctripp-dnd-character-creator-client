@@ -13,7 +13,7 @@
     </head>
     <body>
       <header>
-        <h2><u>Character Creator</u></h2>
+        <h1><u>Character Creator</u></h1>
         <h3><i><small>for </small> Dungeons <small>&</small> Dragons <small> 5e</small></i></h3>
         <form id="form-sign-in" class="signed-out">
           <input type="email" name="credentials[email]" placeholder="Email" autocomplete="email">
@@ -42,18 +42,18 @@
             <option value="LG">Lawful Good (LG)</option>
             <option value="NG">Neutral Good (NG)</option>
             <option value="CG">Chaotic Good (CG)</option>
-            <option value="LN">Lawful Neutral (LG)</option>
+            <option value="LN">Lawful Neutral (LN)</option>
             <option value="N">True Neutral (N)</option>
             <option value="CN">Chaotic Neutral (CN)</option>
             <option value="LE">Lawful Evil (LE)</option>
             <option value="NE">Neutral Evil (NE)</option>
             <option value="CE">Chaotic Evil (CE)</option>
           </select>
+          <button>Create character</button>
           <br>
-          <textarea name="character[appearance]" placeholder="Appearance description"></textarea>
-          <textarea name="character[personality]" placeholder="Personality description"></textarea>
-          <textarea name="character[backstory]" placeholder="Backstory description"></textarea>
-          <br><button>Create character</button>
+          <textarea name="character[appearance]" placeholder="Appearance description" cols=30 rows=15></textarea>
+          <textarea name="character[personality]" placeholder="Personality description" cols=30 rows=15></textarea>
+          <textarea name="character[backstory]" placeholder="Backstory description" cols=30 rows=15></textarea>
         </form>
         <form id="form-char-show" class="signed-in nvisible">
           <button>Show characters</button>
@@ -61,7 +61,7 @@
         <p id="msgs">Msgs here</p>
         <div id="content" class="content"></div>
       </main>
-      <footer>
+      <footer class="footer">
         miketripp | about | github | linkedin
       </footer>
     </body>
