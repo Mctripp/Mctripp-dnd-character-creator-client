@@ -49,6 +49,10 @@ displaySuccessMsg("Character created successfully")
 clearAllForms()
 } // onSignInSuccess
 
+const onSaveCharacterSuccess = responseData => {
+
+}
+
 // FAILURES -------------------------
 
 const displayFailureMsg = msg => {

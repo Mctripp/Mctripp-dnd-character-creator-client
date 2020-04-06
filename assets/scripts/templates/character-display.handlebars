@@ -1,12 +1,14 @@
 {{log character}}
-<section class="section-char" data-id="{{character.id}}">
-  <h3 class="name-text">
-    {{character.name}}
-  </h3>
-  <h6><b>Alignment</b> <span class="type-text">{{character.alignment}}</span></h6>
-  <h6><b>Appearance<br></b> <textarea name="character[appearance]">{{character.appearance}}</textarea></h6>
-  <h6><b>Personality<br></b> <textarea name="character[personality]">{{character.personality}}</textarea></h6>
-  <h6><b>Backstory<br></b> <textarea name="character[backstory]">{{character.backstory}}</textarea></h6>
-  <button data-id="{{character.id}}" class="btn-delete">Delete</button>
-  <button data-id="{{character.id}}" class="btn-save">Save changes</button>
-</section>
+<div class="div-char" data-id="{{character.id}}">
+  <form>
+    <h3 class="name-text">
+      {{character.name}}
+    </h3>
+    <h6><b>Alignment</b> <span class="type-text">{{character.alignment}}</span></h6>
+    <h6><b>Appearance<br></b> <textarea name="character[appearance]" rows=4>{{character.appearance}}</textarea></h6>
+    <h6><b>Personality<br></b> <textarea name="character[personality]" rows=4>{{character.personality}}</textarea></h6>
+    <h6><b>Backstory<br></b> <textarea name="character[backstory]" rows=4>{{character.backstory}}</textarea></h6>
+    <button data-id="{{character.id}}" class="btn-delete">Delete</button>
+    <button data-id="{{character.id}}" class="btn-save">Save changes</button>
+  </form>
+</div>

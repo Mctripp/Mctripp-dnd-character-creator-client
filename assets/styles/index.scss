@@ -7,6 +7,7 @@ $colorBrown: #c1946a;
 $colorPaleGreen: #e3eaa7;
 $colorLightGreen: #b5e7a0;
 $colorDarkGreen: #86af49;
+$colorGray: #d5e1df;
 
 $colorOrange: #f1a713;
 $colorDarkPurple: #1f1f1f;
@@ -17,6 +18,10 @@ html, body {
   font-family: 'Cinzel Decorative', cursive;
   height: 100%;
   background: $colorBrown;
+}
+
+main {
+  height: 100%;
 }
 
 header {
@@ -37,14 +42,17 @@ header h3 {
 footer {
   background: $colorDarkPurple;
   text-align: right;
-  position: absolute;
-  bottom: 0;
   width: 100%;
 }
 
 input, button {
   font-size: 12px;
   border-width: 1px;
+  background-color: $colorGray;
+}
+
+select {
+  background-color: $colorGray;
 }
 
 form {
@@ -71,6 +79,35 @@ header form {
   color: $colorDarkPurple;
   margin: 3px;
   background-color: $colorPaleGreen;
+  resize: none;
+}
+
+.div-char {
+  border: 4px solid $colorDarkGreen;
+  border-top-color: $colorLightGreen;
+  border-left-color: $colorLightGreen;
+  display: inline-block;
+  padding: 3px;
+  color: $colorDarkPurple;
+  margin: 3px;
+  background-color: $colorPaleGreen;
+  resize: both;
+  overflow: auto;
+}
+
+.div-char textarea {
+  resize: both;
+  width: 95%;
+  overflow: auto;
+}
+
+textarea {
+  background-color: $colorGray;
+  resize: none;
+}
+
+.section-char textarea {
+  width: 90%;
 }
 
 .type-text {

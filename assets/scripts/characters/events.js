@@ -58,9 +58,19 @@ const onPressDelete = event => {
   $(pressedButton).on('click', onDeleteCharacter)
 }
 
+const onSaveCharacter = event => {
+  event.preventDefault()
+  const character = getFormFields(event.target)
+  api.saveCharacter($(event.target).data('id'))
+    .then(ui.onSaveCharacterSuccess)
+
+    .catch(ui.failure)
+}
+
 const addHandlers = () => {
   $('.content').on('click', '.btn-delete', onPressDelete)
   $('.content').on('click', '.btn-get', onGetCharacter)
+  $('.content').on('click', '.btn-save', onSaveCharacter)
 }
 
 module.exports = {
@@ -69,5 +79,6 @@ module.exports = {
   onShowCharacters,
   onDeleteCharacter,
   onPressDelete,
+  onSaveCharacter,
   addHandlers
 }

@@ -51,9 +51,21 @@ const deleteCharacter = (charId) => {
   }) // return
 } // signUp
 
+const saveCharacter = (charData) => {
+  return $.ajax({
+    url: config.apiUrl + `/characters/${charData.id}`,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: charData
+  }) // return
+} // signUp
+
 module.exports = {
   createCharacter,
   showCharacters,
   getCharacter,
-  deleteCharacter
+  deleteCharacter,
+  saveCharacter
 }
