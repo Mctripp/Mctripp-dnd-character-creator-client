@@ -1,14 +1,29 @@
 {{log character}}
 <div class="div-char" data-id="{{character.id}}">
-  <form>
-    <h3 class="name-text">
-      {{character.name}}
-    </h3>
-    <h6><b>Alignment</b> <span class="type-text">{{character.alignment}}</span></h6>
-    <h6><b>Appearance<br></b> <textarea name="character[appearance]" rows=4>{{character.appearance}}</textarea></h6>
-    <h6><b>Personality<br></b> <textarea name="character[personality]" rows=4>{{character.personality}}</textarea></h6>
-    <h6><b>Backstory<br></b> <textarea name="character[backstory]" rows=4>{{character.backstory}}</textarea></h6>
-    <button data-id="{{character.id}}" class="btn-delete">Delete</button>
-    <button data-id="{{character.id}}" class="btn-save">Save changes</button>
+  <form id="form-display-char" class="form-display-char" data-id="{{character.id}}">
+    <input type="text" name="character[name]" value="{{character.name}}">
+    <label for="character[alignment]"><b>Alignment</b> </label>
+    <select name="character[alignment]">
+      <option value="LG">Lawful Good (LG)</option>
+      <option value="NG">Neutral Good (NG)</option>
+      <option value="CG">Chaotic Good (CG)</option>
+      <option value="LN">Lawful Neutral (LN)</option>
+      <option value="N">True Neutral (N)</option>
+      <option value="CN">Chaotic Neutral (CN)</option>
+      <option value="LE">Lawful Evil (LE)</option>
+      <option value="NE">Neutral Evil (NE)</option>
+      <option value="CE">Chaotic Evil (CE)</option>
+    </select>
+    <br>
+    <label for="character[appearance]"><b>Appearance</b> </label>
+    <textarea name="character[appearance]" rows=4>{{character.appearance}}</textarea>
+    <label for="character[personality]"><b>Personality</b> </label>
+    <textarea name="character[personality]" rows=4>{{character.personality}}</textarea>
+    <label for="character[backstory]"><b>Backstory</b> </label>
+    <textarea name="character[backstory]" rows=4>{{character.backstory}}</textarea>
+    <br>
+    <button data-id="{{character.id}}" class="btn-delete" type="button">Delete</button>
+    <button class="btn-save" type="submit">Save changes</button>
+    <p class="p-status"></p>
   </form>
 </div>

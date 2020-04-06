@@ -4,11 +4,12 @@
     <h3 class="name-text">
       {{character.name}}
     </h3>
+    <button data-id="{{character.id}}" class="btn-delete">Delete</button>
+    <button data-id="{{character.id}}" class="btn-get">Get</button>
+    <br><br>
     <h6><b>Alignment:</b> <span class="type-text">{{character.alignment}}</span></h6>
     <h6><b>Appearance:</b> <span class="type-text">{{limit character.appearance 30}}</span></h6>
     <h6><b>Personality:</b> <span class="type-text">{{limit character.personality 30}}</span></h6>
     <h6><b>Backstory:</b> <span class="type-text">{{limit character.backstory 30}}</span></h6>
-    <button data-id="{{character.id}}" class="btn-delete">Delete</button>
-    <button data-id="{{character.id}}" class="btn-get">Get</button>
   </section>
 {{/each}}
