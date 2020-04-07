@@ -5,36 +5,33 @@ const getFormFields = require('./../../../lib/get-form-fields.js')
 const showCharactersTemplate = require('../templates/character-listing.handlebars')
 const displayCharacterTemplate = require('../templates/character-display.handlebars')
 
-// Not explaining these next few functions in depth, names
-// explain them well enough
-
+// Clear a form by string:
 const clearForm = (form) => {
   $("#" + form).children().val('')
-} //resetPwForms
+} // clearForm
 
+// Clear all header forms:
 const clearAllForms = () => {
   clearForm("form-sign-in")
   clearForm("form-sign-up")
   clearForm("form-change-password")
-}
+} // clearAllForms
 
+// Display a success message for creating character:
 const displayCreateSuccessMsg = msg => {
 $(".status").html('')
 $(".status-create").html(msg)
 $(".status-create").css("color", "#1f1f1f")
-} // displaySuccessMsg
+} // displayCreateSuccessMsg
 
+// Display other character-related status msgs:
 const displayOtherSuccessMsg = msg => {
 $(".status").html('')
 $(".status-show").html(msg)
 $(".status-show").css("color", "#1f1f1f")
-} // displaySuccessMsg
+} // displayOtherSuccessMsg
 
-// Handle all UI changes:
-
-// USERS ============================
-// SUCCESSES ------------------------
-
+// When showing chars is successful:
 const onShowCharactersSuccess = responseData => {
   $('#form-char-create').removeClass('nvisible')
   console.log(responseData)
@@ -45,10 +42,11 @@ const onShowCharactersSuccess = responseData => {
     displayFailureMsg("No characters found for user.")
   } else {
     $('.content').append(showCharactersHtml)
-  }
+  } // if
   displayOtherSuccessMsg('Characters shown successfully.')
-} // onSignUpSuccess
+} // onShowCharactersSuccess
 
+// When get char is success:
 const onGetCharacterSuccess = responseData => {
   $('#form-char-create').addClass('nvisible')
   const responseCharacter = responseData.character
@@ -59,35 +57,33 @@ const onGetCharacterSuccess = responseData => {
   $('.div-char').find('select').children().each( (index, element) => {
     if (element.value === responseCharacterAlign){
       element.selected = true
-    }
+    } // if
   })
   displayOtherSuccessMsg('Got ' + responseData.character.name + '.')
-}
+} // onGetCharacterSuccess
 
+// When create char is success:
 const onCreateCharacterSuccess = responseData => {
 displayCreateSuccessMsg("Character created successfully")
 clearAllForms()
-} // onSignInSuccess
+// Append character to list immediately
+} // onCreateCharacterSuccess
 
 // FAILURES -------------------------
 
+// Create failure msg:
 const displayCreateFailureMsg = msg => {
   $(".status").html('')
   $(".status-create").html(msg)
   $(".status-create").css("color", "#ff1f1f")
 } // displaySuccessMsg
 
+// Other failure msg:
 const displayOtherFailureMsg = msg => {
   $(".status").html('')
   $(".status-show").html(msg)
   $(".status-show").css("color", "#ff1f1f")
 } // displaySuccessMsg
-
-const displayFailureMsg = msg => {
-  console.log("fail")
-$("#msgs").text(msg)
-$("#msgs").css("color", "red")
-} // displayFailureMsg
 
 module.exports = {
   onShowCharactersSuccess,

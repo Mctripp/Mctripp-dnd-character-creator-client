@@ -7,9 +7,9 @@
 const config = require('../config.js')
 const store = require('../store.js')
 
-// Handle all user database access (AJAX):
+// Handle all character database access (AJAX):
 
-// Sign-up new user:
+// Create new character:
 const createCharacter = (character) => {
   return $.ajax({
     url: config.apiUrl + '/characters',
@@ -19,8 +19,9 @@ const createCharacter = (character) => {
     },
     data: character
   }) // return
-} // signUp
+} // createCharacter
 
+// Show all characters:
 const showCharacters = () => {
   return $.ajax({
     url: config.apiUrl + '/characters',
@@ -29,8 +30,9 @@ const showCharacters = () => {
       Authorization: 'Token token=' + store.user.token
     }
   }) // return
-} // signUp
+} // showCharacters
 
+// Get a single character
 const getCharacter = (charId) => {
   return $.ajax({
     url: config.apiUrl + `/characters/${charId}`,
@@ -39,8 +41,9 @@ const getCharacter = (charId) => {
       Authorization: 'Token token=' + store.user.token
     }
   }) // return
-} // signUp
+} // getCharacter
 
+// Delete a character
 const deleteCharacter = (charId) => {
   return $.ajax({
     url: config.apiUrl + `/characters/${charId}`,
@@ -49,8 +52,9 @@ const deleteCharacter = (charId) => {
       Authorization: 'Token token=' + store.user.token
     }
   }) // return
-} // signUp
+} // deleteCharacter
 
+// Save a character:
 const saveCharacter = (charData, charId) => {
   return $.ajax({
     url: config.apiUrl + `/characters/${charId}`,
@@ -60,7 +64,7 @@ const saveCharacter = (charData, charId) => {
     },
     data: charData
   }) // return
-} // signUp
+} // saveCharacter
 
 module.exports = {
   createCharacter,

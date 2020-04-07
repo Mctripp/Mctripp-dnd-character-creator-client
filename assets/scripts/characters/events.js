@@ -6,8 +6,7 @@ const getFormFields = require('./../../../lib/get-form-fields.js')
 
 // Handle all clicks, form submissions, etc.:
 
-// USERS -------------------
-
+// On create character:
 const onCreateCharacter = event => {
   event.preventDefault()
   const character = getFormFields(event.target)
@@ -17,8 +16,9 @@ const onCreateCharacter = event => {
     .then(ui.onCreateCharacterSuccess)
   // If fail:
     .catch(ui.onCreateCharacterFailure)
-} // onSignUp
+} // onCreateCharacter
 
+// On get character:
 const onGetCharacter = event => {
   event.preventDefault()
   const charId = $(event.target).data('id')
@@ -28,8 +28,9 @@ const onGetCharacter = event => {
     .then(ui.onGetCharacterSuccess)
   // If fail:
     .catch(ui.onGetCharacterFailure)
-} // onSignUp
+} // onGetCharacter
 
+// On show character:
 const onShowCharacters = event => {
   event.preventDefault()
 
@@ -38,8 +39,9 @@ const onShowCharacters = event => {
     .then(ui.onShowCharactersSuccess)
   // If fail:
     .catch(ui.onShowCharactersFailure)
-} // onSignUp
+} // onShowCharacter
 
+// On delete character:
 const onDeleteCharacter= (event) => {
   event.preventDefault()
   api.deleteCharacter($(event.target).data('id'))
@@ -47,8 +49,9 @@ const onDeleteCharacter= (event) => {
       onShowCharacters(event)
     })
     .catch(ui.failure)
-}
+} // onDeleteCharacter
 
+// First delete button press to confirm:
 const onPressDelete = event => {
   event.preventDefault()
   const pressedButton = event.target
@@ -56,8 +59,9 @@ const onPressDelete = event => {
   $(pressedButton).html("Confirm deletion")
   $(pressedButton).css("background-color", "#f1a713")
   $(pressedButton).on('click', onDeleteCharacter)
-}
+} // onPressDelete
 
+// On save character:
 const onSaveCharacter = event => {
   event.preventDefault()
   const character = getFormFields(event.target) //ends up being empty, target is button
@@ -67,13 +71,14 @@ const onSaveCharacter = event => {
     onShowCharacters(event)
   })
     .catch(ui.failure)
-}
+} // onSaveCharacter
 
+// Adding handlers:
 const addHandlers = () => {
   $('.content').on('click', '.btn-delete', onPressDelete)
   $('.content').on('click', '.btn-get', onGetCharacter)
   $('.content').on('submit', '#form-display-char', onSaveCharacter)
-}
+} // addHandlers
 
 module.exports = {
   onCreateCharacter,
