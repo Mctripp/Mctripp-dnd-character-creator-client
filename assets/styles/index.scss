@@ -47,6 +47,10 @@ header {
   }
 }
 
+header > * {
+  display: inline-block;
+}
+
 // --------------------------- MAIN
 main {
   min-height: 90%;

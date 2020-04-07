@@ -42,10 +42,10 @@ const onShowCharacters = event => {
 } // onShowCharacter
 
 // On delete character:
-const onDeleteCharacter= (event) => {
+const onDeleteCharacter = (event) => {
   event.preventDefault()
   api.deleteCharacter($(event.target).data('id'))
-    .then(function(){
+    .then(function () {
       onShowCharacters(event)
     })
     .catch(ui.failure)
@@ -56,20 +56,20 @@ const onPressDelete = event => {
   event.preventDefault()
   const pressedButton = event.target
   $(pressedButton).unbind()
-  $(pressedButton).html("Confirm deletion")
-  $(pressedButton).css("background-color", "#f1a713")
+  $(pressedButton).html('Confirm deletion')
+  $(pressedButton).css('background-color', '#f1a713')
   $(pressedButton).on('click', onDeleteCharacter)
 } // onPressDelete
 
 // On save character:
 const onSaveCharacter = event => {
   event.preventDefault()
-  const character = getFormFields(event.target) //ends up being empty, target is button
+  const character = getFormFields(event.target) // ends up being empty, target is button
   const charId = $(event.target).data('id')
   api.saveCharacter(character, charId)
-  .then(function(){
-    onShowCharacters(event)
-  })
+    .then(function () {
+      onShowCharacters(event)
+    })
     .catch(ui.failure)
 } // onSaveCharacter
 
