@@ -10,7 +10,6 @@ const charEvents = require('./characters/events.js')
 // require('./example')
 
 $(() => {
-  // your JS code goes here
   $('#form-sign-in').on('submit', userEvents.onSignIn)
   $('#form-sign-up').on('submit', userEvents.onSignUp)
   $('#form-sign-out').on('submit', userEvents.onSignOut)

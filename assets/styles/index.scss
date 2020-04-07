@@ -9,23 +9,10 @@ $colorPaleGreen: #e3eaa7;
 $colorLightGreen: #b5e7a0;
 $colorDarkGreen: #86af49;
 $colorGray: #d5e1df;
-
 $colorOrange: #f1a713;
 $colorDarkPurple: #1f1f1f;
 
-.content {
-  display: inline-block;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  max-width: 100%;
-}
-
-.welcome {
-  text-align: center;
-  color: $colorGray;
-}
-
+// --------------------------- HTML + BODY
 html, body {
   color: $colorDarkPurple;
   font-family: 'Gotu', sans-serif;
@@ -34,12 +21,33 @@ html, body {
   flex-grow: 1;
 }
 
-.wrapper {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
+// --------------------------- HEADER
+header {
+  color: $colorDarkPurple;
+  background: $colorLightGreen;
+  border-bottom: 4px double $colorDarkGreen;
+  flex-shrink: 0;
+  h1 {
+    font-family: 'Cinzel Decorative', cursive;
+    font-weight: 700;
+  }
+  h3 {
+    font-family: 'Cinzel Decorative', cursive;
+    font-weight: 400;
+    font-size: 16px;
+  }
+  button, input {
+    border-radius: 5px;
+  }
+  form {
+    background: $colorDarkGreen;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 2px;
+  }
 }
 
+// --------------------------- MAIN
 main {
   min-height: 90%;
   background-image: url('./public/main_bg.jpg');
@@ -49,24 +57,7 @@ main {
   font-family: 'Special Elite', cursive;
 }
 
-header {
-  color: $colorDarkPurple;
-  background: $colorLightGreen;
-  border-bottom: 4px double $colorDarkGreen;
-  flex-shrink: 0;
-}
-
-header h1 {
-  font-family: 'Cinzel Decorative', cursive;
-  font-weight: 700;
-}
-
-header h3 {
-  font-family: 'Cinzel Decorative', cursive;
-  font-weight: 400;
-  font-size: 16px;
-}
-
+// --------------------------- FOOTER
 footer {
   background: $colorDarkPurple;
   color: $colorDarkGreen;
@@ -75,6 +66,13 @@ footer {
   height: 6%;
   border-top: 3px double $colorDarkGreen;
   flex-shrink: 0;
+}
+
+// --------------------------- INPUTS
+textarea {
+  background-color: $colorGray;
+  resize: none;
+  opacity: 0.8;
 }
 
 input, button {
@@ -90,16 +88,24 @@ select {
 form {
   padding: 1px 3px 3px 3px;
 }
-
-header button, input {
-  border-radius: 5px;
+// --------------------------- FORMATTING CLASSES
+.content {
+  display: inline-block;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  max-width: 100%;
 }
 
-header form {
-  background: $colorDarkGreen;
-  border-radius: 5px;
-  display: inline-block;
-  margin: 2px;
+.welcome {
+  text-align: center;
+  color: $colorGray;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .section-char {
@@ -135,12 +141,6 @@ header form {
   overflow: auto;
 }
 
-textarea {
-  background-color: $colorGray;
-  resize: none;
-  opacity: 0.8;
-}
-
 .section-char textarea {
   width: 90%;
 }
@@ -162,7 +162,7 @@ textarea {
 .btn-delete, .btn-get {
   color: $colorDarkPurple;
 }
-
+// --------------------------- UTILITY CLASSES
 .nvisible {
   display: none;
 }
