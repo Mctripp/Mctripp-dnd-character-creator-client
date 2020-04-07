@@ -6,24 +6,24 @@ const getFormFields = require('./../../../lib/get-form-fields.js')
 // Not explaining these next few functions in depth, names
 // explain them well enough
 
+// Clear a form by string
 const clearForm = (form) => {
   $("#" + form).children().val('')
-} //resetPwForms
+} //clearForm
 
+// Clear all header forms
 const clearAllForms = () => {
   clearForm("form-sign-in")
   clearForm("form-sign-up")
   clearForm("form-change-password")
-}
+} //clearAllForms
 
+// Display success msg
 const displaySuccessMsg = msg => {
 $("#msgs").text(msg)
 $("#msgs").css("color", "green")
 } // displaySuccessMsg
 
-// Handle all UI changes:
-
-// USERS ============================
 // SUCCESSES ------------------------
 
 const onSignUpSuccess = responseData => {
