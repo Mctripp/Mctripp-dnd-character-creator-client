@@ -18,9 +18,16 @@ const clearAllForms = () => {
   clearForm("form-change-password")
 }
 
-const displaySuccessMsg = msg => {
-$("#msgs").html(msg)
-$("#msgs").css("color", "green")
+const displayCreateSuccessMsg = msg => {
+$(".status").html('')
+$(".status-create").html(msg)
+$(".status-create").css("color", "#1f1f1f")
+} // displaySuccessMsg
+
+const displayOtherSuccessMsg = msg => {
+$(".status").html('')
+$(".status-show").html(msg)
+$(".status-show").css("color", "#1f1f1f")
 } // displaySuccessMsg
 
 // Handle all UI changes:
@@ -29,15 +36,21 @@ $("#msgs").css("color", "green")
 // SUCCESSES ------------------------
 
 const onShowCharactersSuccess = responseData => {
-console.log(responseData)
-const responseCharacters = responseData.characters
-const showCharactersHtml = showCharactersTemplate({ characters: responseCharacters })
-$('.content').empty()
-$('.content').append(showCharactersHtml)
-//separate this data neatly, populate scrolling block to pick fro
+  $('#form-char-create').removeClass('nvisible')
+  console.log(responseData)
+  const responseCharacters = responseData.characters
+  const showCharactersHtml = showCharactersTemplate({ characters: responseCharacters })
+  $('.content').empty()
+  if(responseCharacters.length === 0) {
+    displayFailureMsg("No characters found for user.")
+  } else {
+    $('.content').append(showCharactersHtml)
+  }
+  displayOtherSuccessMsg('Characters shown successfully.')
 } // onSignUpSuccess
 
 const onGetCharacterSuccess = responseData => {
+  $('#form-char-create').addClass('nvisible')
   const responseCharacter = responseData.character
   const responseCharacterAlign = responseCharacter.alignment
   const displayCharacterHtml = displayCharacterTemplate({ character: responseCharacter })
@@ -48,18 +61,27 @@ const onGetCharacterSuccess = responseData => {
       element.selected = true
     }
   })
+  displayOtherSuccessMsg('Got ' + responseData.character.name + '.')
 }
 
 const onCreateCharacterSuccess = responseData => {
-displaySuccessMsg("Character created successfully")
+displayCreateSuccessMsg("Character created successfully")
 clearAllForms()
 } // onSignInSuccess
 
-const onSaveCharacterSuccess = responseData => {
-
-}
-
 // FAILURES -------------------------
+
+const displayCreateFailureMsg = msg => {
+  $(".status").html('')
+  $(".status-create").html(msg)
+  $(".status-create").css("color", "#ff1f1f")
+} // displaySuccessMsg
+
+const displayOtherFailureMsg = msg => {
+  $(".status").html('')
+  $(".status-show").html(msg)
+  $(".status-show").css("color", "#ff1f1f")
+} // displaySuccessMsg
 
 const displayFailureMsg = msg => {
   console.log("fail")

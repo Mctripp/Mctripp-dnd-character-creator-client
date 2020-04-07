@@ -2,7 +2,7 @@
 <div class="div-char" data-id="{{character.id}}">
   <form id="form-display-char" class="form-display-char" data-id="{{character.id}}">
     <input type="text" name="character[name]" value="{{character.name}}">
-    <label for="character[alignment]"><b>Alignment</b> </label>
+    <label for="character[alignment]"><b>Alignment</b> </label><br>
     <select name="character[alignment]">
       <option value="LG">Lawful Good (LG)</option>
       <option value="NG">Neutral Good (NG)</option>
@@ -15,13 +15,12 @@
       <option value="CE">Chaotic Evil (CE)</option>
     </select>
     <br>
-    <label for="character[appearance]"><b>Appearance</b> </label>
-    <textarea name="character[appearance]" rows=4>{{character.appearance}}</textarea>
-    <label for="character[personality]"><b>Personality</b> </label>
-    <textarea name="character[personality]" rows=4>{{character.personality}}</textarea>
-    <label for="character[backstory]"><b>Backstory</b> </label>
-    <textarea name="character[backstory]" rows=4>{{character.backstory}}</textarea>
-    <br>
+    <label for="character[appearance]"><b>Appearance</b> </label><br>
+    <textarea name="character[appearance]" rows=4>{{character.appearance}}</textarea><br>
+    <label for="character[personality]"><b>Personality</b> </label><br>
+    <textarea name="character[personality]" rows=4>{{character.personality}}</textarea><br>
+    <label for="character[backstory]"><b>Backstory</b> </label><br>
+    <textarea name="character[backstory]" rows=4>{{character.backstory}}</textarea><br>
     <button data-id="{{character.id}}" class="btn-delete" type="button">Delete</button>
     <button class="btn-save" type="submit">Save changes</button>
     <p class="p-status"></p>

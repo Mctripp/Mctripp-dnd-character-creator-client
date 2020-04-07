@@ -28,7 +28,7 @@ $("#msgs").css("color", "green")
 
 const onSignUpSuccess = responseData => {
 displaySuccessMsg("Signed up successfully")
-$("#msgs").text(responseData)
+$('#form-sign-up')[0].reset()
 } // onSignUpSuccess
 
 const onSignInSuccess = responseData => {

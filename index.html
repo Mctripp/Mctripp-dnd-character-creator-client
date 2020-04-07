@@ -12,8 +12,9 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+      <div class="wrapper">
       <header>
-        <h1><u>Character Creator</u></h1>
+        <h1>Character Creator</h1>
         <h3><i><small>for </small> Dungeons <small>&</small> Dragons <small> 5e</small></i></h3>
         <form id="form-sign-in" class="signed-out">
           <input type="email" name="credentials[email]" placeholder="Email" autocomplete="email">
@@ -21,23 +22,28 @@
           <button>Sign in</button>
         </form>
         <form id="form-sign-up" class="signed-out">
-          <input type="email" name="credentials[email]" placeholder="Email">
-          <input type="password" name="credentials[password]" placeholder="Password">
-          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm password">
+          <input type="email" name="credentials[email]" placeholder="Email" autocomplete="email">
+          <input type="password" name="credentials[password]" placeholder="Password" autocomplete="new-password">
+          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm password" autocomplete="new-password">
           <button>Sign up</button>
         </form>
         <form id="form-change-password" class="signed-in nvisible">
-          <input type="password" name="passwords[old]" placeholder="Password">
-          <input type="password" name="passwords[new]" placeholder="Confirm password">
+          <input type="password" name="passwords[old]" placeholder="Password" autocomplete="new-password">
+          <input type="password" name="passwords[new]" placeholder="Confirm password" autocomplete="new-password">
           <button>Change password</button>
         </form>
         <form id="form-sign-out" class="signed-in nvisible">
           <button>Sign out</button>
         </form>
+        <p id="msgs" class="status status-sign"></p>
       </header>
       <main>
+        <h2 class="welcome signed-out"><br><i>"Welcome, adventurer!<br><br>&Dagger;</i></h2><br>
+        <p class="welcome signed-out">
+          <i>It's not every day that I see someone like you. What's your story? Settle down, sign in, and tell me about yourself."</i>
+        </p>
         <form id="form-char-create" class="signed-in nvisible">
-          <input type="text" name="character[name]" placeholder="Character name">
+          <input type="text" name="character[name]" required="required" placeholder="Character name">
           <select name="character[alignment]">
             <option value="LG">Lawful Good (LG)</option>
             <option value="NG">Neutral Good (NG)</option>
@@ -50,6 +56,7 @@
             <option value="CE">Chaotic Evil (CE)</option>
           </select>
           <button>Create character</button>
+          <p class="status status-create"></p>
           <br>
           <textarea name="character[appearance]" placeholder="Appearance description" cols=30 rows=15></textarea>
           <textarea name="character[personality]" placeholder="Personality description" cols=30 rows=15></textarea>
@@ -57,12 +64,13 @@
         </form>
         <form id="form-char-show" class="signed-in nvisible">
           <button>Show characters</button>
+          <p class="status status-show"></p>
         </form>
-        <p id="msgs">Msgs here</p>
         <div id="content" class="content"></div>
       </main>
       <footer class="footer">
         miketripp | about | github | linkedin
       </footer>
+    </div>
     </body>
 </html>

@@ -63,8 +63,9 @@ const onSaveCharacter = event => {
   const character = getFormFields(event.target) //ends up being empty, target is button
   const charId = $(event.target).data('id')
   api.saveCharacter(character, charId)
-    .then(ui.onSaveCharacterSuccess)
-
+  .then(function(){
+    onShowCharacters(event)
+  })
     .catch(ui.failure)
 }
 

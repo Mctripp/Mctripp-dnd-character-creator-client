@@ -1,6 +1,7 @@
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gotu&display=swap');
 
 // Theme colors
 $colorBrown: #c1946a;
@@ -14,38 +15,66 @@ $colorDarkPurple: #1f1f1f;
 
 .content {
   display: inline-block;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.welcome {
+  text-align: center;
+  color: $colorGray;
 }
 
 html, body {
   color: $colorDarkPurple;
-  font-family: 'Cinzel Decorative', cursive;
+  font-family: 'Gotu', sans-serif;
   height: 100%;
-  background: $colorBrown;
+  background: $colorDarkPurple;
+  flex-grow: 1;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
-  height: 100%;
+  min-height: 90%;
+  background-image: url('./public/main_bg.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  font-family: 'Special Elite', cursive;
 }
 
 header {
   color: $colorDarkPurple;
   background: $colorLightGreen;
-  border-bottom: 4px solid $colorDarkGreen;
+  border-bottom: 4px double $colorDarkGreen;
+  flex-shrink: 0;
 }
 
 header h1 {
+  font-family: 'Cinzel Decorative', cursive;
   font-weight: 700;
 }
 
 header h3 {
+  font-family: 'Cinzel Decorative', cursive;
   font-weight: 400;
   font-size: 16px;
 }
 
 footer {
   background: $colorDarkPurple;
+  color: $colorDarkGreen;
   text-align: right;
   width: 100%;
+  height: 6%;
+  border-top: 3px double $colorDarkGreen;
+  flex-shrink: 0;
 }
 
 input, button {
@@ -75,27 +104,27 @@ header form {
 
 .section-char {
   border: 4px solid $colorDarkGreen;
-  border-top-color: $colorLightGreen;
-  border-left-color: $colorLightGreen;
+  border-top-color: $colorPaleGreen;
+  border-left-color: $colorPaleGreen;
   border-bottom-left-radius: 15px;
   border-top-right-radius: 15px;
   display: inline-block;
   padding: 5px;
   color: $colorDarkPurple;
   margin: 3px;
-  background-color: $colorPaleGreen;
+  background-color: $colorLightGreen;
   resize: none;
 }
 
 .div-char {
   border: 4px solid $colorDarkGreen;
-  border-top-color: $colorLightGreen;
-  border-left-color: $colorLightGreen;
+  border-top-color: $colorPaleGreen;
+  border-left-color: $colorPaleGreen;
   display: inline-block;
   padding: 3px;
   color: $colorDarkPurple;
   margin: 3px;
-  background-color: $colorPaleGreen;
+  background-color: $colorLightGreen;
   resize: both;
   overflow: auto;
 }
@@ -109,15 +138,20 @@ header form {
 textarea {
   background-color: $colorGray;
   resize: none;
+  opacity: 0.8;
 }
 
 .section-char textarea {
   width: 90%;
 }
 
-.type-text {
+.status {
+  display: inline-block;
+}
+
+.type-text, textarea, select, button, select option, main input {
   font-family: 'Special Elite', cursive;
-  color: $colorDarkGreen;
+  color: $colorDarkPurple;
 }
 
 .name-text {
