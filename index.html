@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>DND 5e Character Creator</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <!-- WRAPPER for working footer -->
+      <div class="wrapper">
+      <header>
+        <!-- BANNER -->
+        <div>
+          <h1>Character Creator</h1>
+          <h3><i><small>for </small> Dungeons <small>&</small> Dragons <small> 5e</small></i></h3>
+        </div>
+        <!-- SIGN IN FORM -->
+        <form id="form-sign-in" class="signed-out">
+          <input type="email" name="credentials[email]" placeholder="Email" autocomplete="email">
+          <input type="password" name="credentials[password]" placeholder="Password" autocomplete="current-password">
+          <button>Sign in</button>
+        </form>
+        <!-- SIGN UP FORM -->
+        <form id="form-sign-up" class="signed-out">
+          <input type="email" name="credentials[email]" placeholder="Email" autocomplete="email">
+          <input type="password" name="credentials[password]" placeholder="Password" autocomplete="new-password">
+          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm password" autocomplete="new-password">
+          <button>Sign up</button>
+        </form>
+        <!-- CHANGE PW FORM -->
+        <form id="form-change-password" class="signed-in nvisible">
+          <input type="password" name="passwords[old]" placeholder="Old password" autocomplete="new-password">
+          <input type="password" name="passwords[new]" placeholder="New password" autocomplete="new-password">
+          <button>Change password</button>
+        </form>
+        <!-- SIGN OUT FORM -->
+        <form id="form-sign-out" class="signed-in nvisible">
+          <button>Sign out</button>
+        </form>
+        <!-- SIGN STATUS MSGS -->
+        <p id="msgs" class="status status-sign"></p>
+      </header>
+      <!-- MAIN -->
+      <main>
+        <!-- BLURB -->
+        <h2 class="welcome signed-out"><br><i>"Welcome, adventurer!<br><br>&Dagger;</i></h2><br>
+        <p class="welcome signed-out">
+          <i>It's not every day that I see someone like you. What's your story? Settle down, sign in, and tell me about yourself."</i>
+        </p>
+        <!-- CHAR CREATE FORM invis on sign out -->
+        <form id="form-char-create" class="signed-in nvisible">
+          <input type="text" name="character[name]" required="required" placeholder="Character name">
+          <select name="character[alignment]">
+            <option value="LG">Lawful Good (LG)</option>
+            <option value="NG">Neutral Good (NG)</option>
+            <option value="CG">Chaotic Good (CG)</option>
+            <option value="LN">Lawful Neutral (LN)</option>
+            <option value="N">True Neutral (N)</option>
+            <option value="CN">Chaotic Neutral (CN)</option>
+            <option value="LE">Lawful Evil (LE)</option>
+            <option value="NE">Neutral Evil (NE)</option>
+            <option value="CE">Chaotic Evil (CE)</option>
+          </select>
+          <button>Create character</button>
+          <p class="status status-create"></p>
+          <br>
+          <textarea name="character[appearance]" placeholder="Appearance description" cols=30 rows=15></textarea>
+          <textarea name="character[personality]" placeholder="Personality description" cols=30 rows=15></textarea>
+          <textarea name="character[backstory]" placeholder="Backstory description" cols=30 rows=15></textarea>
+        </form>
+        <!-- CHAR SHOW FORM invis on sign out -->
+        <form id="form-char-show" class="signed-in nvisible">
+          <button>Show characters</button>
+          <p class="status status-show"></p>
+        </form>
+        <!-- CONTENT DIV -->
+        <div id="content" class="content"></div>
+      </main>
+      <!-- FOOTER need to fill this with links -->
+      <footer class="footer">
+        miketripp | github | linkedin
+      </footer>
+    </div>
+    </body>
+</html>
