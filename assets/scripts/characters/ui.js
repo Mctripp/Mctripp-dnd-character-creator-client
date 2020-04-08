@@ -10,8 +10,9 @@ const clearForm = (form) => {
   $('#' + form).children().val('')
 } // clearForm
 
-// Clear all header forms:
+// Clear all forms:
 const clearAllForms = () => {
+  clearForm('form-char-create')
   clearForm('form-sign-in')
   clearForm('form-sign-up')
   clearForm('form-change-password')
