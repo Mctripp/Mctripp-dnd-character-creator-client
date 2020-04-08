@@ -2,7 +2,7 @@
 
 let apiUrl
 const apiUrls = {
-  production: 'https://char-create-api.herokuapp.com/',
+  production: 'https://ga-proj2-dnd-5e-api.herokuapp.com/',
   development: 'http://localhost:4741'
 }
 
