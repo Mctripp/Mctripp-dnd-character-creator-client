@@ -59,6 +59,14 @@ main {
   background-size: cover;
   background-position: center;
   font-family: 'Special Elite', cursive;
+  button {
+    background-color: $colorDarkGreen;
+    border: 5px solid $colorPaleGreen;
+    border-bottom-color: $colorDarkPurple;
+    border-right-color: $colorDarkPurple;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
 }
 
 // --------------------------- FOOTER
