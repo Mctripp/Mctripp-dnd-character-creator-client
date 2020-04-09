@@ -35,7 +35,6 @@ const displayOtherSuccessMsg = msg => {
 // When showing chars is successful:
 const onShowCharactersSuccess = responseData => {
   $('#form-char-create').removeClass('nvisible')
-  console.log(responseData)
   const responseCharacters = responseData.characters
   const showCharactersHtml = showCharactersTemplate({ characters: responseCharacters })
   $('.content').empty()

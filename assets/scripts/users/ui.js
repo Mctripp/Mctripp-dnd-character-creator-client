@@ -55,7 +55,6 @@ const onChangePasswordSuccess = responseData => {
 // FAILURES -------------------------
 
 const displayFailureMsg = msg => {
-  console.log('fail')
   $('#msgs').text(msg)
   $('#msgs').css('color', 'red')
 } // displayFailureMsg
