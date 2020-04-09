@@ -8,7 +8,7 @@ This app uses an API and a frontend client to store and retrieve character infor
 
 #Wireframe
 
-![wireframe](https://github.com/Mctripp/Mctripp-dnd-charactor-creator-client/master/public/wireframe.jpg)
+![wireframe](https://github.com/Mctripp/Mctripp-dnd-character-creator-client/blob/master/public/wireframe.jpg)
 
 #User Stories
 I want a user to be able to:
