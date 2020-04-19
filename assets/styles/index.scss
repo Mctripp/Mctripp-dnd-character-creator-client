@@ -78,6 +78,14 @@ footer {
   height: 6%;
   border-top: 3px double $colorDarkGreen;
   flex-shrink: 0;
+  a {
+    text-decoration: none;
+    color: $colorPaleGreen;
+    &:hover {
+      color: $colorOrange;
+      text-decoration: none;
+    }
+  }
 }
 
 // --------------------------- INPUTS
